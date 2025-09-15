@@ -1,0 +1,176 @@
+body {
+    font-family: 'Georgia', serif;
+    background: #f7f8fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 24px 40px 0 40px;
+    background: none;
+}
+
+.logo {
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+}
+
+.titulo-logo {
+    color: #223cc7;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 90vh;
+    margin-top: 24px;
+}
+
+.container-cadastro {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(60,80,180,0.09);
+    padding: 32px 42px;
+    width: 1200px;
+    gap: 36px;
+}
+
+.left-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 620px;
+}
+
+.img-biblioteca {
+    width: 580px;
+    height: 410px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 18px rgba(80,100,180,0.07);
+}
+
+.form-cadastro {
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-cadastro h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1.36rem;
+    font-weight: bold;
+    color: #191c23;
+    line-height: 1.2;
+}
+
+.form-cadastro label {
+    display: block;
+    margin: 12px 0 6px 0;
+    font-size: 1.01rem;
+    color: #24262a;
+    font-weight: 500;
+}
+
+.form-cadastro input[type="text"],
+.form-cadastro input[type="email"],
+.form-cadastro input[type="password"] {
+    width: 100%;
+    height: 38px;
+    border-radius: 7px;
+    border: 1.2px solid #ddd;
+    padding: 0 12px;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    background: #f7f8fa;
+    transition: border-color 0.2s;
+}
+
+.input-file {
+    display: flex;
+    align-items: center;
+    border: 1.3px dashed #c8ccd7;
+    border-radius: 7px;
+    background: #f7f8fa;
+    padding: 8px 12px;
+    margin-bottom: 7px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.input-file img {
+    width: 22px;
+    height: 22px;
+}
+
+.input-file input[type="file"] {
+    display: none;
+}
+
+.input-file span {
+    color: #343b4a;
+    font-size: 0.97rem;
+}
+
+.btn-cadastrar {
+    width: 100%;
+    margin-top: 18px;
+    height: 45px;
+    background: #223cc7;
+    color: #fff;
+    border: none;
+    border-radius: 23px;
+    font-size: 1.13rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.btn-cadastrar:hover {
+    background: #172493;
+}
+
+.input-file.dropzone {
+    border: 1.5px dashed #bdbdbd;
+    background: #f9f9fc;
+    padding: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    transition: border 0.2s;
+    position: relative;
+    min-height: 48px;
+}
+
+.input-file.dropzone.dragover {
+    border: 2px solid #223cc7;
+    background: #e7f0ff;
+}
+
+.input-file.dropzone img {
+    width: 25px;
+    height: 25px;
+}
+
+.input-file.dropzone span {
+    color: #343b4a;
+    font-size: 1rem;
+}
+
+.input-file input[type="file"] {
+    display: none;
+}

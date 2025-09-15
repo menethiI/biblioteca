@@ -1,34 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 <head>
-    <title>Cadastro de Usuário</title>
+    <meta charset="UTF-8">
+    <title>Cadastro - Biblioteca Monteiro Lobato</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
-    <form th:action="@{/usuarios/cadastro}" 
-          method="post" 
-          enctype="multipart/form-data" 
-          th:object="${usuario}">
-        <label for="nome">Nome:</label>
-        <input type="text" th:field="*{nome}" id="nome" required /><br/>
+    <header>
+        <img src="/images/icon-livro-aberto.png" alt="Logo biblioteca" class="logo">
+        <span class="titulo-logo">Biblioteca Monteiro Lobato</span>
+    </header>
+    <main>
+        <div class="container-cadastro">
+            <div class="left-img">
+                <img src="/images/img-biblioteca.jpeg" alt="Biblioteca" class="img-biblioteca">
+            </div>
+            <div class="form-cadastro">
+                <h2>Preencha os campos abaixo para criar sua conta</h2>
+                <form method="POST" enctype="multipart/form-data" action="/usuarios/cadastro" autocomplete="off">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required>
 
-        <label for="email">E-mail:</label>
-        <input type="email" th:field="*{email}" id="email" required /><br/>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
 
-        <label for="senha">Senha:</label>
-        <input type="password" th:field="*{senha}" id="senha" required /><br/>
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required>
 
-        <label for="confirmaSenha">Repita a Senha:</label>
-        <input type="password" name="confirmaSenha" id="confirmaSenha" required /><br/>
+                    <label for="confirmaSenha">Confirme a senha</label>
+                    <input type="password" id="confirmaSenha" name="confirmaSenha" required>
 
-        <label for="documentoFoto">Documento com Foto:</label>
-        <input type="file" name="documentoFoto" id="documentoFoto" accept="image/*" required /><br/>
+                    <label for="documento">Documento com foto</label>
+                    <div class="input-file dropzone" id="dropzone-documento">
+                        <img src="/images/icon-anexo.png" alt="Anexar">
+                        <span id="span-documento">Arraste e solte o arquivo aqui ou clique para selecionar</span>
+                        <input type="file" id="documento" name="documentoFoto" accept="image/*" required>
+                    </div>
 
-        <label for="comprovanteEndereco">Comprovante de Endereço:</label>
-        <input type="file" name="comprovanteEndereco" id="comprovanteEndereco" accept="image/*" required /><br/>
+                    <label for="comprovante">Comprovante de endereço</label>
+                    <div class="input-file dropzone" id="dropzone-comprovante">
+                        <img src="/images/icon-anexo.png" alt="Anexar">
+                        <span id="span-comprovante">Arraste e solte o arquivo aqui ou clique para selecionar</span>
+                        <input type="file" id="comprovante" name="comprovanteEndereco" accept="image/*" required>
+                    </div>
 
-        <button type="submit">Cadastrar</button>
-    </form>
-    <p th:text="${mensagem}"></p>
+                    <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="/scripts/cadastro-usuario.js"></script>
 </body>
 </html>
