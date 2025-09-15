@@ -31,7 +31,7 @@ Este é um projeto de sistema web para gestão de biblioteca, desenvolvido como 
 
 2. **Configuração do Banco de Dados**
     - Crie um banco de dados PostgreSQL para o projeto
-    - Defina as variáveis de ambiente `DB_URL`, `DB_USER` e `DB_PASSWORD` com os dados de conexão
+    - Defina as variáveis de ambiente `DB_USER` e `DB_PASSWORD` com os dados de conexão
 
 3. **Configuração do Projeto**
     - Clone este repositório
