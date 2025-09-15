@@ -174,3 +174,16 @@ main {
 .input-file input[type="file"] {
     display: none;
 }
+
+
+.campo-erro {
+    color: #d32f2f;
+    font-size: 13px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    display: block;
+}
+input:invalid {
+    border-color: #d32f2f;
+}
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cadastro - Biblioteca Monteiro Lobato</title>
@@ -17,35 +17,42 @@
             </div>
             <div class="form-cadastro">
                 <h2>Preencha os campos abaixo para criar sua conta</h2>
-                <form method="POST" enctype="multipart/form-data" action="/usuarios/cadastro" autocomplete="off">
-                    <label for="nome">Nome completo</label>
-                    <input type="text" id="nome" name="nome" required>
+                
+				<form id="formCadastro" method="POST" enctype="multipart/form-data" th:action="@{/usuarios/cadastro}" th:object="${usuario}">
+				    <label for="nome">Nome completo</label>
+				    <input type="text" id="nome" th:field="*{nome}" maxlength="50">
+				    <div class="campo-erro" id="erro-nome"></div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
+				    <label for="email">E-mail</label>
+				    <input type="email" id="email" th:field="*{email}" maxlength="60">
+				    <div class="campo-erro" id="erro-email"></div>
 
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" required>
+				    <label for="senha">Senha</label>
+				    <input type="password" id="senha" th:field="*{senha}" minlength="8">
+				    <div class="campo-erro" id="erro-senha"></div>
 
-                    <label for="confirmaSenha">Confirme a senha</label>
-                    <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+				    <label for="confirmaSenha">Confirme a senha</label>
+				    <input type="password" id="confirmaSenha" name="confirmaSenha" minlength="8">
+				    <div class="campo-erro" id="erro-confirmaSenha"></div>
 
-                    <label for="documento">Documento com foto</label>
-                    <div class="input-file dropzone" id="dropzone-documento">
-                        <img src="/images/icon-anexo.png" alt="Anexar">
-                        <span id="span-documento">Arraste e solte o arquivo aqui ou clique para selecionar</span>
-                        <input type="file" id="documento" name="documentoFoto" accept="image/*" required>
-                    </div>
+				    <label for="documento">Documento com foto</label>
+				    <div class="input-file dropzone" id="dropzone-documento">
+				        <img src="/images/icon-anexo.png" alt="Anexar">
+				        <span id="span-documento">Arraste e solte o arquivo aqui ou clique para selecionar</span>
+				        <input type="file" id="documento" name="documentoFoto" accept="image/*">
+				    </div>
+				    <div class="campo-erro" id="erro-documento"></div>
 
-                    <label for="comprovante">Comprovante de endereço</label>
-                    <div class="input-file dropzone" id="dropzone-comprovante">
-                        <img src="/images/icon-anexo.png" alt="Anexar">
-                        <span id="span-comprovante">Arraste e solte o arquivo aqui ou clique para selecionar</span>
-                        <input type="file" id="comprovante" name="comprovanteEndereco" accept="image/*" required>
-                    </div>
+				    <label for="comprovante">Comprovante de endereço</label>
+				    <div class="input-file dropzone" id="dropzone-comprovante">
+				        <img src="/images/icon-anexo.png" alt="Anexar">
+				        <span id="span-comprovante">Arraste e solte o arquivo aqui ou clique para selecionar</span>
+				        <input type="file" id="comprovante" name="comprovanteEndereco" accept="image/*">
+				    </div>
+				    <div class="campo-erro" id="erro-comprovante"></div>
 
-                    <button type="submit" class="btn-cadastrar">Cadastrar</button>
-                </form>
+				    <button type="submit" class="btn-cadastrar">Cadastrar</button>
+				</form>
             </div>
         </div>
     </main>

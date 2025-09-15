@@ -3,6 +3,7 @@ package br.com.biblioteca.controller;
 import br.com.biblioteca.model.Usuario;
 import br.com.biblioteca.service.UsuarioService;
 
+
 import java.io.IOException;
 import java.util.Base64;
 
@@ -46,12 +47,14 @@ public class UsuarioController {
 
             model.addAttribute("mensagem", "Usuário cadastrado com sucesso!");
         } catch (Exception e) {
+            e.printStackTrace(); 
             model.addAttribute("mensagem", "Erro ao cadastrar usuário: " + e.getMessage());
         }
 
         return "usuario/cadastro";
     }
 
+    
     private String toBase64(MultipartFile file) throws IOException {
         return Base64.getEncoder().encodeToString(file.getBytes());
     }

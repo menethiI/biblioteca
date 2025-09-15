@@ -18,7 +18,7 @@ public class UsuarioService {
     public void salvarUsuario(Usuario usuario) {
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(senhaCriptografada);
-
         usuarioRepository.save(usuario);
+
     }
 }
