@@ -171,8 +171,34 @@ main {
     font-size: 1rem;
 }
 
-.input-file input[type="file"] {
-    display: none;
+.centered-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    text-align: center;
+}
+.success-title {
+    color: #1d18b8;
+    margin-bottom: 1rem;
+}
+.main-btn {
+    display: inline-block;
+    background: #251edb;
+    color: #fff;
+    padding: 0.8rem 2.5rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.4rem;
+    text-decoration: none;
+    transition: background 0.18s;
+}
+.main-btn:hover {
+    background: #18347b;
 }
 
 

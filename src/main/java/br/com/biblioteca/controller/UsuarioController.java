@@ -51,7 +51,7 @@ public class UsuarioController {
             model.addAttribute("mensagem", "Erro ao cadastrar usuário: " + e.getMessage());
         }
 
-        return "usuario/cadastro";
+        return "usuario/confirmacao-cadastro";
     }
 
     
